@@ -6,6 +6,9 @@ function ChampionRotation() {
         <div>
             <Navbar/>
             <h1>Champion Rotations!</h1>
+            {/* Create grid:
+             map the list of champion rotations,
+            and return a component that displays one champion portait */}
         </div>    
     )
 }
