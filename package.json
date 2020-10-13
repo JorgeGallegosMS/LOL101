@@ -1,0 +1,15 @@
+{
+  "name": "league101",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "Jorge Gallegos",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.5"
+  }
+}
