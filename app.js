@@ -3,10 +3,14 @@ const app = express()
 const { graphqlHTTP } = require('express-graphql')
 const { GraphQLSchema } = require('graphql')
 const RootQueryType = require('./graphqlTypes/root')
+const cors = require('cors')
+
+app.use(cors())
 
 const schema = new GraphQLSchema({
   query: RootQueryType
 })
+
 
 app.use('/graphql', graphqlHTTP({
   schema,
