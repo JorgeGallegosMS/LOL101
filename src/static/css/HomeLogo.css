@@ -1,3 +1,63 @@
-.logo {
-    margin: 2em;
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+.logo img {
+    height: 10vh;
+    top: 255px;
+    bottom: 0px;
+    position: relative;
+    right: 10px;
+    filter: contrast(148%);
+    filter: drop-shadow(5px 5px 15px #353f42);
+}
+
+.logo2 img {
+    height: 100%;
+    position: absolute;
+    bottom: 0px;
+    top: 130px;
+    right: 0px;
+    left: 370px;
+    image-rendering: crisp-edges;
+    padding-bottom: 10px;
+
+
+}
+
+.parall {
+    position: relative;
+    min-height: 38vw;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: white;
+    transform: skew(20deg);
+    position: relative;
+    margin-left: 49em;
+    top: 80px;
+    
+}
+
+.frame {
+    width: 90%;
+    height: 75%;
+    margin-left: 80px;
+    top: 100px;
+    right: 80px;
+    border: 1px solid #D0A85D;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    display: block;
+    border-radius: 2%;
+    z-index: 1;
 }
