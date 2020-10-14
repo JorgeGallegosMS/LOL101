@@ -1,4 +1,5 @@
 const ChampionType = require('./champion')
+const ItemType = require('./item')
 const { GraphQLString, GraphQLObjectType } = require('graphql')
 const axios = require('axios')
 
@@ -13,7 +14,7 @@ const RootQueryType = new GraphQLObjectType({
     },
     champion: {
       type: ChampionType,
-      description: 'A single champion\'s data',
+      description: 'Data for a single champion',
       args: {
         name: {
           type: GraphQLString
@@ -22,6 +23,19 @@ const RootQueryType = new GraphQLObjectType({
       resolve: async (root, { name }) => {
         const response = await axios.get(`http://ddragon.leagueoflegends.com/cdn/10.21.1/data/en_US/champion/${name}.json`)
         return response.data.data[name]
+      }
+    },
+    item: {
+      type: ItemType,
+      description: 'Data for a single item',
+      args: {
+        id: {
+          type: GraphQLString
+        }
+      },
+      resolve: async (root, { id }) => {
+        const response = await axios.get('http://ddragon.leagueoflegends.com/cdn/10.21.1/data/en_US/item.json')
+        return response.data.data[id]
       }
     }
   })
