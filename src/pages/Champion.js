@@ -1,13 +1,12 @@
 import React from 'react'
 import Navbar from '../components/organisms/Navbar'
+import DisplayChampion from '../components/organisms/DisplayChampion'
 
 function Champion() {
     return (
         <div>
             <Navbar/>
-            <h1>Champion</h1>
-            {/* Create grid:
-            Display all champion info (Needs info first) */}
+            <DisplayChampion/>
         </div>
     )
 }

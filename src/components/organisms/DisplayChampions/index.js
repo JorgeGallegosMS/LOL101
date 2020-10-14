@@ -6,8 +6,23 @@ const axios = require("axios")
 function DisplayChampions() {
     const [champions1, setChampions1] = useState([])
     useEffect( () => {
+        async function grabIds() {
+            const data = await axios({
+                url: 'http://localhost:5000/graphql',
+                method: 'post',
+                data: {
+                    query: `
+                    query Champion {
+                        champIds
+                    }
+                    `
+                }
+            })
+            return data.data.data.champIds
+        }
         async function postrequest() {
-            const champions = ["Tryndamere", "Jax", "Khazix"]
+            // console.log(await grabIds())
+            const champions = await grabIds()
             const p = champions.map((champ) => {
                 return axios({
                     url: 'http://localhost:5000/graphql',
@@ -44,7 +59,7 @@ function DisplayChampions() {
             setChampions1(JSX_champ)
         }
         postrequest()
-    }) 
+    }, [champions1]) 
     
     return (
         <div>
