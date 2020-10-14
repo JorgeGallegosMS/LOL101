@@ -1,4 +1,4 @@
-const { GraphQLString, GraphQLInt, GraphQLObjectType, GraphQLList, GraphQLScalarType } = require('graphql')
+const { GraphQLString, GraphQLInt, GraphQLObjectType, GraphQLList } = require('graphql')
 
 const ChampionType = new GraphQLObjectType({
   name: 'ChampionType',
