@@ -14,9 +14,14 @@ const RootQueryType = new GraphQLObjectType({
     champion: {
       type: ChampionType,
       description: 'A single champion\'s data',
-      resolve: async () => {
-        const response = await axios.get('http://ddragon.leagueoflegends.com/cdn/10.21.1/data/en_US/champion/Aatrox.json')
-        return response.data.data.Aatrox
+      args: {
+        name: {
+          type: GraphQLString
+        }
+      },
+      resolve: async (root, { name }) => {
+        const response = await axios.get(`http://ddragon.leagueoflegends.com/cdn/10.21.1/data/en_US/champion/${name}.json`)
+        return response.data.data[name]
       }
     }
   })
