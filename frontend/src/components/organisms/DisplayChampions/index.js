@@ -41,10 +41,10 @@ function DisplayChampions() {
                     }
                 })
             })
-            // console.log('here')
+            console.log('here')
             // console.log(p)
             const values = await axios.all(p)
-            // console.log(values)
+            console.log(values)
             const JSX_champ = values.map((champion) => {
                 // console.log(`Champion Variable:`)
                 console.log(champion.data.data.champion)

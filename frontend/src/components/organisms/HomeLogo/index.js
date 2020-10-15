@@ -10,7 +10,17 @@ function HomeLogo() {
             <div className="frame"></div>
             <div className="logos-container2">
             <div className="logo"><img src={logo} alt="Logo"/></div>
-            <div className="parall"></div>
+            <div className="parall">
+            <div className="squares">
+            <square></square>
+            <square></square>
+            <square></square>
+            <square></square>
+            <square></square>
+            <square></square>
+            <square></square>
+            </div>
+            </div>
             <div className="logo2"><img src={ahri} alt="Logo"/></div>
             
             </div>

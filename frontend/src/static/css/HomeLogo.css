@@ -64,3 +64,9 @@ body {
     border-radius: 2%;
     z-index: 1;
 }
+
+  
+  @keyframes squares { 
+    from { transform: translateY(100%) rotate(-50deg) }
+    to   { transform: translateY(calc(-100vh + -100%)) rotate(20deg) }}
+  
