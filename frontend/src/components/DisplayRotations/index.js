@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react'
-const axios = require("axios")
+import '../../static/css/Rotations.css'
 
+const axios = require("axios")
 function DisplayRotations() {
     const [champions1, setChampions1] = useState([])
     useEffect( () => {
@@ -22,11 +23,12 @@ function DisplayRotations() {
             const rotations = data.data.data.rotations
             const champion_JSX = (
                 <Fragment>
+                    
                     {rotations.map((champ) => {
                         return (
                             <div>
-                                <h1>{champ.name}</h1>
-                                <img src={champ.splashArt}/>
+                                    <h1>{champ.name}</h1>
+                                    <img src={champ.splashArt}/>
                             </div>
                         )
                     })}
@@ -39,7 +41,15 @@ function DisplayRotations() {
     
     return (
         <Fragment>
-            {champions1}
+            <div class="hero-title">
+                <div data-aos="fade-down"><h2>Current Champion Rotation</h2>
+                </div>
+            </div>
+            <div className="border">
+            <div className="champ-grid">
+                {champions1}
+            </div>
+            </div>
         </Fragment>
     )
 }
