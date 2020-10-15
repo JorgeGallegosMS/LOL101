@@ -14,7 +14,8 @@ body {
     top: 255px;
     bottom: 0px;
     position: relative;
-    right: 10px;
+    right: 0px;
+    left: 40px;
     filter: contrast(148%);
     filter: drop-shadow(5px 5px 15px #353f42);
 }
@@ -25,7 +26,7 @@ body {
     bottom: 0px;
     top: 130px;
     right: 0px;
-    left: 370px;
+    left: 450px;
     image-rendering: crisp-edges;
     padding-bottom: 10px;
 
@@ -35,7 +36,9 @@ body {
 .parall {
     position: relative;
     min-height: 38vw;
-    width: 100%;
+    width: 135%;
+    right: 0px;
+    left: 140px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
