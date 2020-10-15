@@ -41,7 +41,7 @@ function DisplayChampions() {
                     }
                 })
             })
-            // console.log('here')
+            console.log('here')
             // console.log(p)
             const values = await axios.all(p)
             // console.log(values)
@@ -51,10 +51,15 @@ function DisplayChampions() {
                 const { name, image } = champion.data.data.champion
                 return (
                     <li>
-                        <img src={`http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/${image.full}`}/>
-                        <h1>{name}</h1>
+                        <div class="champion {{ @key }}" id="1">
+                            <a class="champion-link" href="/champions/{{ @key }}" id="2">
+                            <p class="champion-name">{name}</p>
+                            <div id="a"><img class="champion-image" src={`http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/${image.full}`} id="3"/>
+                            </div>
+                            </a>
+                        </div>
                     </li>
-                )
+            )
             })
             setChampions1(JSX_champ)
         }
@@ -63,8 +68,12 @@ function DisplayChampions() {
     
     return (
         <div>
-            {champions1}
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."/>   
+            <ul id="myUL">
+                {champions1}
+            </ul>         
         </div>
     )
 }
+
 export default DisplayChampions

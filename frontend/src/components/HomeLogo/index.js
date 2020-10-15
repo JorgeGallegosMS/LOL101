@@ -1,8 +1,8 @@
 import React from 'react'
 // import { Link } from 'react-router-dom'
-import logo from '../../../static/images/logo1.png'
-import ahri from '../../../static/images/ahri.png'
-import '../../../static/css/HomeLogo.css'
+import logo from '../../static/images/logo1.png'
+import ahri from '../../static/images/ahri.png'
+import '../../static/css/HomeLogo.css'
 function HomeLogo() {
     return (
         <header>

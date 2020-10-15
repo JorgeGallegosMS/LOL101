@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from '../components/organisms/Navbar'
-import DisplayChampion from '../components/organisms/DisplayChampion'
+import Navbar from '../components/Navbar'
+import DisplayChampion from '../components/DisplayChampion'
 
 function Champion() {
     return (
