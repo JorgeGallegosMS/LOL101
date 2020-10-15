@@ -1,0 +1,268 @@
+/* ---- RESET STYLESHEET ---- */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/* ---- CODE ---- */
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Dosis', sans-serif;
+}
+
+body {
+    background-image: url("/./static/test2-edit.jpg");
+    animation-name: appear1;
+    background-size: cover;
+    animation-duration: 2s;
+    transition: all 500ms cubic-bezier(0.550, 0.085, 0.680, 0.530);
+    color: white;
+}
+
+.navbar {
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    flex: 0.5;
+    background-color: #3D494E;
+    border-radius: 2%;
+    
+    
+}
+
+ul li {
+    display: inline-block;
+    margin: 0 20px;
+   
+}
+
+
+
+ul li a:hover {
+    bottom: 10px;
+    opacity: 1;
+    box-shadow: 0px 0px 0px 2px #D0A85D;
+    opacity: 2;
+    color: rgb(199, 196, 196);
+}
+
+ul li a {
+    padding: 0 15px;
+    color: white; 
+    display: flex;
+    transition: box-shadow 0.6s ease-in-out;
+    margin: 0.5em;
+    padding: 5px 5px 5px 5px;
+   
+
+}
+
+
+.container {
+    width: 100%;
+    animation-name: appear;
+    animation-duration: 2s;
+    transition: all 500ms cubic-bezier(0.550, 0.085, 0.680, 0.530);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+
+
+    
+}
+
+.header-brand {
+    font-family: Cormorant Garamond;
+    font-size: 20px;
+    font-weight: 900;
+    margin-left: 31px;
+    color: white;
+    letter-spacing: 1px;
+    border-right: 5px solid #D0A85D;
+    text-align: center;
+    display: block;
+    margin: 0 100px;
+ 
+
+}
+
+.header-brand::before {
+    content:" ";
+    bottom: 10px;
+    height: 2px;
+    background: #D0A85D;
+    display: block;
+    left: 40px;
+    width: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.header-brand:hover,.header-brand.active {color: white;}
+.header-brand:hover::before, .header-brand.active::before {width: 100%;}
+
+.hero-title {
+    width: 100%;
+    height: 30vh;
+    margin: auto;
+    position: relative;
+    background-color: transparent;
+}
+img {
+    width: 230px;
+    height: 250px;
+    border-radius: .3rem;
+    border: 1px solid #D0A85D;
+    display: block;
+    object-fit: cover;
+    object-position: 83% 50%;
+    overflow: hidden;
+    
+}
+
+
+h2 {
+    font-size: 50px;
+    margin: auto;
+    text-align: center;
+    transform: translate(0px, 130px);
+    letter-spacing: 5px;
+    
+}
+.champ-grid {
+    padding: 20px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+    justify-items: center;
+    overflow: hidden;
+    overflow: hidden;
+    
+
+}
+
+a > h1 {
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin: 0px 0px 10px 0px;
+}
+
+.border {
+    border: 3px solid #D0A85D;
+    margin: auto;
+}
+
+img:hover {
+    opacity: 0.80;
+    animation-timing-function: ease-in-out;
+    transition: all 400ms ease;
+   
+}
+
+
+@keyframes appear1 {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+}
