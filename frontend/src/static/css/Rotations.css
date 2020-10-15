@@ -1,4 +1,4 @@
-/* ---- RESET STYLESHEET ---- */
+/* ---- RESET STYLESHEET ----
 
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -207,7 +207,7 @@ ul li a {
     position: relative;
     background-color: transparent;
 }
-img {
+/* img {
     width: 230px;
     height: 250px;
     border-radius: .3rem;
@@ -217,7 +217,7 @@ img {
     object-position: 83% 50%;
     overflow: hidden;
     
-}
+} */
 
 
 h2 {
