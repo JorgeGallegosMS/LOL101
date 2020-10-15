@@ -8,6 +8,10 @@ const ChampionType = new GraphQLObjectType({
       type: GraphQLString,
       description: 'The id of the champion',
     },
+    key: {
+      type: GraphQLString,
+      description: 'The numerical id of a champion'
+    },
     name: {
       type: GraphQLString,
       description: 'The name of the champion',

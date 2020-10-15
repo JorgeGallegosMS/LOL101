@@ -18,4 +18,4 @@ app.use('/graphql', graphqlHTTP({
 }))
 
 const { port } = require('./vars/appVars')
-app.listen(port, () => console.log(`Server started at http://localhost:${port}`))
+app.listen(port, () => console.log(`Server started at http://localhost:${port}/graphql`))
