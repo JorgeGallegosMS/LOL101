@@ -47,7 +47,7 @@ function DisplayChampions() {
             // console.log(values)
             const JSX_champ = values.map((champion) => {
                 // console.log(`Champion Variable:`)
-                // console.log(champion.data.data.champion)
+                console.log(champion.data.data.champion)
                 const { name, image } = champion.data.data.champion
                 return (
                     <li>
@@ -59,7 +59,7 @@ function DisplayChampions() {
             setChampions1(JSX_champ)
         }
         postrequest()
-    }, [champions1]) 
+    }, []) 
     
     return (
         <div>

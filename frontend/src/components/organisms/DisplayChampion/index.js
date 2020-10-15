@@ -63,8 +63,8 @@ function DisplayChampion() {
                     `
                 }
             })
-            console.log("here")
-            console.log(data.data.data.champion)
+            // console.log("here")
+            // console.log(data.data.data.champion)
             const {id, name, image, title, info, lore, allytips, enemytips, tags, skins, passive, spells} = data.data.data.champion
             const champion_JSX = (
                 <Fragment>
@@ -102,7 +102,7 @@ function DisplayChampion() {
             setChampions1(champion_JSX)
         }
         postrequest()
-    }) 
+    }, []) 
     
     return (
         <Fragment>
