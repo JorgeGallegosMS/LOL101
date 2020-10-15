@@ -1,18 +1,33 @@
 const { GraphQLString, GraphQLObjectType, GraphQLList } = require('graphql')
 
-const RotationsType = new GraphQLObjectType({
-    name: 'RotationsType',
-    description: 'Free champion rotations info',
+// const RotationsType = new GraphQLObjectType({
+//     name: 'RotationsType',
+//     description: 'Free champion rotations info',
+//     fields: () => ({
+//         freeChampionIds: {
+//             type: new GraphQLList(rotationChampType),
+//             description: 'The id of free champions'
+//         }
+//     })
+// })
+
+const RotationChampType = new GraphQLObjectType({
+    name: 'RotationChampType',
+    description: 'Name and splash are for a champion in the free rotation',
     fields: () => ({
-        freeChampionIds: {
-            type: new GraphQLList(GraphQLString),
-            description: 'The id of free champions'
+        name: {
+            type: GraphQLString,
+            description: 'The name of the champion'
+        },
+        splashArt: {
+            type: GraphQLString,
+            description: 'The champion\'s default splash art'
         }
     })
 })
 
 
-module.exports = RotationsType
+module.exports = RotationChampType
 
 // const getChampionRotations = async champsDict => {
 //     try {

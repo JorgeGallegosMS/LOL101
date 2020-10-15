@@ -1,6 +1,6 @@
 const ChampionType = require('./champion')
 const ItemType = require('./item')
-const RotationsType = require('./rotations')
+const RotationChampType = require('./rotations')
 const { GraphQLString, GraphQLObjectType, GraphQLList } = require('graphql')
 const axios = require('axios')
 const { apiKey } = require('../vars/appVars')
@@ -50,13 +50,23 @@ const RootQueryType = new GraphQLObjectType({
       }
     },
     rotations: {
-      type: RotationsType,
+      type: new GraphQLList(RotationChampType),
       description: 'Data for free champions in the rotations',
       resolve: async () => {
         const response = await axios.get(`https://na1.api.riotgames.com/lol/platform/v3/champion-rotations?api_key=${apiKey}`)
-        console.log(response.data)
-        // Add logic to loop through champion ids and get their corresponding name and image(splashart)
-        return response.data
+        const data = await axios.get('http://ddragon.leagueoflegends.com/cdn/10.21.1/data/en_US/champion.json')
+        
+        // List of champion ids in the free rotation
+        const champIds = response.data.freeChampionIds
+        const champions = data.data.data
+
+        const rotationInfo = []
+        for (champion in champions) {
+          if (champIds.includes(parseInt(champions[champion].key))){
+            rotationInfo.push({name: champions[champion].name, splashArt: `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion}_0.jpg`})
+          }
+        }
+        return rotationInfo
       }
     }
   })
