@@ -13,11 +13,13 @@ function Home() {
             <main>
                 <section className="home">
                     <div className="champions">
-                        <div className="champion-text">
+                        
             <h1>Home</h1>
+            <div className="rectangle">
             <h3>Choose Your<text> Legend</text></h3>
+            </div>
             <DisplayChampions/>
-        </div>
+        
         </div>
         </section>
         </main>

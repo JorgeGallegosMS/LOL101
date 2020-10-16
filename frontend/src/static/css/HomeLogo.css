@@ -65,6 +65,79 @@ body {
     z-index: 1;
 }
 
+.logos-container2 {
+    position: relative;
+}
+
+ul {
+    padding: 20px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    justify-items: center;  
+
+}
+.champion-name {
+    letter-spacing: 1px;
+    display: block;
+    color: black;
+    padding: 1rem 0;
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+
+.champion-link p {
+    margin: 0;
+}
+
+.champion-image {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        box-shadow: 0px 10px 20px -2px rgb(109, 107, 107);
+        box-shadow: 0 0 0 4px #D3BD94;
+        transition: box-shadow 0.6s ease-in-out;
+        transition: 1s ease;     
+
+}
+
+
+.champion-image:hover {
+    border: 7px solid rgb(255, 255, 255);
+    box-shadow: 0 0 0 10px #D3BD94;
+    box-sizing: border-box;
+    animation-timing-function: ease-in-out;
+    transition: all 400ms ease;
+    opacity: 0.75;
+}
+
+.rectangle {
+    height: 100px;
+    width: 540px;
+    background-color: #B8F2FF;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    animation-name: appear;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+}
+
+.rectangle > h3 {
+    color: #181F20;
+    font-size: 50px;
+    padding-top: 15px;
+    font-weight: normal;
+}
+
+.rectangle > h3 > text {
+    font-weight: bold;
+
+}
+
+
+
   
   @keyframes squares { 
     from { transform: translateY(100%) rotate(-50deg) }

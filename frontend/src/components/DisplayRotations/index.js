@@ -27,8 +27,8 @@ function DisplayRotations() {
                     {rotations.map((champ) => {
                         return (
                             <div>
-                                    <h1>{champ.name}</h1>
-                                    <img src={champ.splashArt}/>
+                                    <h1 class="champ-namer">{champ.name}</h1>
+                                    <img class="imager" src={champ.splashArt}/>
                             </div>
                         )
                     })}
@@ -41,15 +41,17 @@ function DisplayRotations() {
     
     return (
         <Fragment>
+            
             <div class="hero-title">
-                <div data-aos="fade-down"><h2>Current Champion Rotation</h2>
-                </div>
+                <h2>Current Champion Rotation</h2>
             </div>
             <div className="border">
             <div className="champ-grid">
                 {champions1}
+              
             </div>
             </div>
+            
         </Fragment>
     )
 }

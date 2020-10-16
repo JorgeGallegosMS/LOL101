@@ -1,5 +1,7 @@
+import '../../static/css/HomeLogo.css'
 import React, { Fragment, useState, useEffect } from 'react'
 const axios = require("axios")
+
 
 // import { Link } from 'react-router-dom'
 //Call data.keys() on https://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json to grab list of champions.
@@ -51,12 +53,14 @@ function DisplayChampions() {
                 const { name, image } = champion.data.data.champion
                 return (
                     <li>
+                        <div class="champion-container">
                         <div class="champion {{ @key }}" id="1">
                             <a class="champion-link" href="/champions/{{ @key }}" id="2">
                             <p class="champion-name">{name}</p>
                             <div id="a"><img class="champion-image" src={`http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/${image.full}`} id="3"/>
                             </div>
                             </a>
+                            </div>
                         </div>
                     </li>
             )
@@ -67,7 +71,7 @@ function DisplayChampions() {
     }, []) 
     
     return (
-        <div>
+        <div className="searchbar">
             <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."/>   
             <ul id="myUL">
                 {champions1}
