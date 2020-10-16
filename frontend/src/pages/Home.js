@@ -11,10 +11,10 @@ export default function Home() {
             <main>
                 <section className="home">
                     <div className="champions">
-                        <div className="champion-text">
-                            <h3>Choose Your <text>Legend</text></h3>
-                            <DisplayChampions/>
-                        </div>
+                    <div className="rectangle">
+                    <h3>Choose Your<text> Legend</text></h3>
+                    </div>
+                    <DisplayChampions/>
                     </div>
                 </section>
             </main>

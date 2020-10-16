@@ -92,13 +92,13 @@ ul {
 }
 
 .champion-image {
-        height: 100px;
-        width: 100px;
-        border-radius: 50%;
-        box-shadow: 0px 10px 20px -2px rgb(109, 107, 107);
-        box-shadow: 0 0 0 4px #D3BD94;
-        transition: box-shadow 0.6s ease-in-out;
-        transition: 1s ease;     
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    box-shadow: 0px 10px 20px -2px rgb(109, 107, 107);
+    box-shadow: 0 0 0 4px #D3BD94;
+    transition: box-shadow 0.6s ease-in-out;
+    transition: 1s ease;     
 
 }
 
@@ -137,6 +137,60 @@ ul {
 }
 
 
+/* search bar */
+
+.searchbar-container {
+    padding-top: 64px;
+}
+
+.searchinp {
+    width: 30%;
+    padding: 12px 24px;
+    transition: all 250ms ease-in-out;
+    font-size: 18px;
+    line-height: 18px;
+    color: #948568;
+ 
+    
+}
+
+.searchinp::placeholder {
+    color: rgba(87, 87, 86, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+
+}
+
+.searchinp:hover, .searchinp:focus {
+    padding: 12px 0px 12px 12px;
+    outline: 0;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #575756;
+    border-radius: 0;
+    transition: all 400ms ease-in-out;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.subbutton {
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #181F20;
+    padding: 17px;
+    border-radius: 5px;
+    display: inline-block;
+    border: none;
+    transition: all 400ms ease-in-out;
+    margin-bottom: 30px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.subbutton:hover {
+    background: #434343;
+    letter-spacing: 1px;
+    box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 400ms ease-in-out;
+}
 
   
   @keyframes squares { 

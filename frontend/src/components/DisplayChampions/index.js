@@ -70,9 +70,11 @@ export default function DisplayChampions() {
                 e.preventDefault()
             }}>
                 {/* On input */}
-                <input type="text" value={search} onInput={(e)=>updateSearch(e)} placeholder="Search for names.."/> 
-                <button type="submit">Search</button>
-            </form>  
+                <div className="searchbar-container">
+                <input class="searchinp" type="text" value={search} onInput={(e)=>updateSearch(e)} placeholder="Search for champions"/> 
+                <button class="subbutton" type="submit">Search</button>
+                </div>
+            </form> 
             {/* instead of champions1 its filtered champions */}
             {loadingState}
             <ChampionList champions={filteredChampions}/>
