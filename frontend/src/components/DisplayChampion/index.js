@@ -3,22 +3,31 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import '../../static/css/Champions.css'
 
-
+import {
+    BrowserRouter as Router,
+    useParams
+  } from "react-router-dom";
 const axios = require("axios")
 
 
 function DisplayChampion() {
     const [champion, setChampion] = useState([])
+    const [champID, setChampID] = useState("Tryndamere")
+    let { id1 } = useParams()
+    // setChampID(id)
+    console.log(id1)
+    console.log("here")
     useEffect( () => {
         async function postrequest() {
             const champion = "Tryndamere"
+            console.log("Made it here")
             const data = await axios({
                 url: 'http://localhost:5000/graphql',
                 method: 'post',
                 data: {
                     query: `
                     query Champion {
-                        champion(name: "${champion}") {
+                        champion(name: "${id1}") {
                             id
                             name
                             title
@@ -73,23 +82,39 @@ function DisplayChampion() {
 
             const champion_JSX = (
                 <Fragment>
-                    <h1>{name}</h1>
-                    <h1>Title: {title}</h1>
+                <div class="section-container">
+                  <div class="name-tag">
+                        <h1>{name}</h1>
+                  </div>
+
+                    <div class="container">
+                    <div class="champion-title">
+                        <h1>Title: {title}</h1>
+                    </div>
+                    </div>
                     {/* <h1>Icon: <img src={`http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/${image.full}`} alt={name}/></h1> */}
                     <h1>Tags: {tags.map((tag) => {
                         return <p>{tag}</p>
                     })}</h1>
                       <h1>Skins:</h1>
-                    {skins.map((skin) => {
-    
-                        return ( 
-                            <div>
-                                <h1>{skins[0].name}</h1>
-                                <img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${skins[0].num}.jpg`} alt={name}/>
+                      <div class="splash-art"> 
+                            <div class="splash">
+                            <h1>{skins[0].name}</h1>
+                            <img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${skins[0].num}.jpg`} alt={name}/>
                             </div>
+                            </div>
+                            
+                        {/* {skins.map((skin) => {
+                        return ( 
+                            <div class="splash-art"> 
+                            <div class="splash">
+                            <h1>{skins[0].name}</h1>
+                            <img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${skins[0].num}.jpg`} alt={name}/>
+                        </div>
+                        </div>
                         )
-                    })}
-
+                    })} */}
+            
                    
                     <Tabs>
                         <TabList>
@@ -113,7 +138,8 @@ function DisplayChampion() {
                         <h2>{lore}</h2>
                         </TabPanel>
                     </Tabs>
-
+                    </div>
+                   
     </Fragment>
             )
             setChampion(champion_JSX)
@@ -121,6 +147,7 @@ function DisplayChampion() {
         postrequest()
     }, []) 
     
+
     return (
         <Fragment>
             {champion}
