@@ -43,7 +43,7 @@ function DisplayRotations() {
         <Fragment>
             
             <div class="hero-title">
-                <h2>Current Champion Rotation</h2>
+                <h2>Current Champion Rotations</h2>
             </div>
             <div className="border">
             <div className="champ-grid">
