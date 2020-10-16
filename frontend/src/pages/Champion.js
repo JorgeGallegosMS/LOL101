@@ -6,7 +6,9 @@ export default function Champion() {
     return (
         <div>
             <Navbar/>
+            <div className="championinf">
             <DisplayChampion/>
+            </div>
         </div>
     )
 }
