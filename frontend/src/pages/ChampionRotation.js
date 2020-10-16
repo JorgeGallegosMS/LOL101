@@ -1,7 +1,8 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import DisplayRotations from '../components/DisplayRotations'
-function ChampionRotation() {
+
+export default function ChampionRotation() {
     return (
         <div>
             <div class="nav-rota">
@@ -13,5 +14,3 @@ function ChampionRotation() {
         </div>    
     )
 }
-
-export default ChampionRotation
