@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import DisplayChampion from '../components/DisplayChampion'
 
-function Champion() {
+export default function Champion() {
     return (
         <div>
             <Navbar/>
@@ -10,5 +10,3 @@ function Champion() {
         </div>
     )
 }
-
-export default Champion
