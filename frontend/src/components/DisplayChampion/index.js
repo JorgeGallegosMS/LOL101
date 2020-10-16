@@ -45,6 +45,9 @@ function DisplayChampion() {
                                 description
                                 tooltip
                                 cooldownBurn
+                                image {
+                                    full
+                                }
                             }
                             passive {
                                 name
@@ -87,6 +90,21 @@ function DisplayChampion() {
                     <h1>Enemy Tips: {enemytips.map((tip) => {
                         return <p>{tip}</p>
                     })}</h1>
+                    <h1>Passive:</h1>
+                    <p>{passive.name}</p>
+                    <p>{passive.description}</p>
+                    <img src={`http://ddragon.leagueoflegends.com/cdn/10.21.1/img/passive/${passive.image.full}`} />
+                    <h1>Abilities:</h1>
+                    {spells.map((spell) => {
+                        return (
+                            <div>
+                                <h1>{spell.name}</h1>
+                                <p>{spell.description}</p>
+                                <p>{spell.cooldownBurn}</p>
+                                <img src={`http://ddragon.leagueoflegends.com/cdn/10.21.1/img/spell/${spell.image.full}`}/>
+                            </div>
+                        )
+                    })}
                     <h1>Skins:</h1>
                     {skins.map((skin) => {
                         return (
