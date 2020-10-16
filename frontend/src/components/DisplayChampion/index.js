@@ -96,6 +96,21 @@ function DisplayChampion() {
                     <h1>Tags: {tags.map((tag) => {
                         return <p>{tag}</p>
                     })}</h1>
+                     <h1>Passive:</h1>
+                    <p>{passive.name}</p>
+                    <p>{passive.description}</p>
+                    <img src={`http://ddragon.leagueoflegends.com/cdn/10.21.1/img/passive/${passive.image.full}`} />
+                    <h1>Abilities:</h1>
+                    {spells.map((spell) => {
+                        return (
+                            <div>
+                                <h1>{spell.name}</h1>
+                                <p>{spell.description}</p>
+                                <p>{spell.cooldownBurn}</p>
+                                <img src={`http://ddragon.leagueoflegends.com/cdn/10.21.1/img/spell/${spell.image.full}`}/>
+                            </div>
+                        )
+                    })}
                       <h1>Skins:</h1>
                       <div class="splash-art"> 
                             <div class="splash">
