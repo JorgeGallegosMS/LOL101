@@ -1,18 +1,28 @@
 import React, { useState, useEffect, Fragment } from 'react'
+import {
+    BrowserRouter as Router,
+    useParams
+  } from "react-router-dom";
 const axios = require("axios")
 
 function DisplayChampion() {
     const [champion, setChampion] = useState([])
+    const [champID, setChampID] = useState("Tryndamere")
+    let { id1 } = useParams()
+    // setChampID(id)
+    console.log(id1)
+    console.log("here")
     useEffect( () => {
         async function postrequest() {
             const champion = "Tryndamere"
+            console.log("Made it here")
             const data = await axios({
                 url: 'http://localhost:5000/graphql',
                 method: 'post',
                 data: {
                     query: `
                     query Champion {
-                        champion(name: "${champion}") {
+                        champion(name: "${id1}") {
                             id
                             name
                             title
@@ -93,6 +103,7 @@ function DisplayChampion() {
         postrequest()
     }, []) 
     
+
     return (
         <Fragment>
             {champion}

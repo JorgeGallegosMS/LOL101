@@ -21,6 +21,7 @@ export default function DisplayRotations() {
                 }
             })
             const rotations = data.data.data.rotations
+            console.log(rotations)
             const champion_JSX = (
                 <Fragment>
                     {rotations.map((champ) => {
