@@ -63,7 +63,7 @@ const RootQueryType = new GraphQLObjectType({
         const rotationInfo = []
         for (champion in champions) {
           if (champIds.includes(parseInt(champions[champion].key))){
-            rotationInfo.push({name: champions[champion].name, splashArt: `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion}_0.jpg`})
+            rotationInfo.push({id: champions[champion].id, name: champions[champion].name, splashArt: `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion}_0.jpg`})
           }
         }
         return rotationInfo
