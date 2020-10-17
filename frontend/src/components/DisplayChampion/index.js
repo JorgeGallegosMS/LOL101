@@ -2,7 +2,6 @@ import React, { useState, useEffect, Fragment } from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import '../../static/css/Champions.css'
-
 import {
     BrowserRouter as Router,
     useParams
@@ -12,14 +11,9 @@ const axios = require("axios")
 
 function DisplayChampion() {
     const [champion, setChampion] = useState([])
-    const [champID, setChampID] = useState("Tryndamere")
     let { id1 } = useParams()
-    // setChampID(id)
-    console.log(id1)
-    console.log("here")
     useEffect( () => {
         async function postrequest() {
-            const champion = "Tryndamere"
             console.log("Made it here")
             const data = await axios({
                 url: 'http://localhost:5000/graphql',
@@ -77,14 +71,39 @@ function DisplayChampion() {
                     `
                 }
             })
-  
-
-          
+            
             // console.log(data.data.data.champion)
             const {id, name, image, title, info, lore, allytips, enemytips, tags, skins, passive, spells} = data.data.data.champion
 
             const champion_JSX = (
                 <Fragment>
+                    <Tabs>
+                        <TabList>
+                            <Tab>Info</Tab>
+                            <Tab>Lore</Tab>
+                            <Tab>Recomended Items</Tab>
+                        </TabList>
+                        <TabPanel>
+                            <h1>Difficulty: {info.difficulty}</h1>
+                            <h1>{tags.map((tag) => {
+                                return (
+                                    <p>Class: {tag}</p>
+                                )
+                            })}</h1>
+                            <h1>Playing As: {allytips.map((tip) => {
+                                return <p>{tip}</p>
+                            })}</h1>
+                            <h1>Playing Agaisnt: {enemytips.map((tip) => {
+                                return <p>{tip}</p>
+                            })}</h1>
+                        </TabPanel>
+                        <TabPanel>
+                            <h2>{lore}</h2>
+                        </TabPanel>
+                        <TabPanel>
+                            <h2>We might not get this by monday so dont style it</h2>
+                        </TabPanel>
+                    </Tabs>
                 <div class="section-container">
                   <div class="name-tag">
                         <h1>{name}</h1>
@@ -96,9 +115,6 @@ function DisplayChampion() {
                     </div>
                     </div>
                     {/* <h1>Icon: <img src={`http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/${image.full}`} alt={name}/></h1> */}
-                    <h1>Tags: {tags.map((tag) => {
-                        return <p>{tag}</p>
-                    })}</h1>
                      <h1>Passive:</h1>
                     <p>{passive.name}</p>
                     <p>{passive.description}</p>
@@ -121,41 +137,6 @@ function DisplayChampion() {
                             <img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${skins[0].num}.jpg`} alt={name}/>
                             </div>
                             </div>
-                            
-                        {/* {skins.map((skin) => {
-                        return ( 
-                            <div class="splash-art"> 
-                            <div class="splash">
-                            <h1>{skins[0].name}</h1>
-                            <img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${skins[0].num}.jpg`} alt={name}/>
-                        </div>
-                        </div>
-                        )
-                    })} */}
-            
-                   
-                    {/* <Tabs>
-                        <TabList>
-                        <Tab>Info</Tab>
-                        <Tab>Lore</Tab>
-                        </TabList>
-                    
-                        <TabPanel>
-                        <h2>Difficulty: {info.difficulty}</h2>
-
-                        <h1>Ally Tips: {allytips.map((tip) => {
-                        return <p>{tip}</p>
-                        })}</h1>
-
-                        <h1>Enemy Tips: {enemytips.map((tip) => {
-                        return <p>{tip}</p>
-                        })}</h1>
-
-                        </TabPanel>
-                        <TabPanel>
-                        <h2>{lore}</h2>
-                        </TabPanel>
-                    </Tabs> */}
                     </div>
                    
     </Fragment>
