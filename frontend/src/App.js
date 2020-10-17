@@ -14,11 +14,8 @@ function App() {
         <div className="App">
           <Route path="/rotations" exact render={ () => <ChampionRotation/>} />
           <Route path="/" exact render={ () => <Home/>}>
-            {/* <Route path="/" element={ChampionIndex}></Route> What does this page actually display as a component: Creates a list of objects with key and name, defines slug there too. */}
           </Route>
           <Route path="/champion/:id1" exact render={ () => <Champion/>}></Route>
-
-          {/* <Route path="/champions/:championName" element={Champion} /> */}
         </div>
       </Switch>
     </Router>

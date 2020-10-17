@@ -59,9 +59,10 @@ export default function DisplayChampions() {
         setLoadingState("")
         let searchTerm = e.target.value.substr(0,20)
         setSearch(searchTerm)
+        console.log(search)
         // const newChampions = values.map((champion)=> champion.data.data.champion) 
         const filter = allChampions.filter((champion) => {
-            return champion.name.toLowerCase().includes(search.toLowerCase())
+            return champion.name.toLowerCase().includes(searchTerm.toLowerCase())
         })
 
         const filteredChampions = filter.filter((champion, index) => index < 12)
