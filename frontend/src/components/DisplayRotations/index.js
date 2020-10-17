@@ -21,13 +21,16 @@ export default function DisplayRotations() {
                 }
             })
             const rotations = data.data.data.rotations
+            console.log(rotations)
             const champion_JSX = (
                 <Fragment>
                     {rotations.map((champ) => {
                         return (
                             <div>
-                                <h1 class="champ-namer">{champ.name}</h1>
-                                   <img class="imager" src={champ.splashArt}/>
+                                <a href={`/champion/${champ.name}`}>
+                                    <h1 class="champ-namer">{champ.name}</h1>
+                                    <img class="imager" src={champ.splashArt}/>
+                                </a>
                            </div>
                         )
                     })}
