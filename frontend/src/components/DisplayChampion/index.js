@@ -50,6 +50,9 @@ function DisplayChampion() {
                                 description
                                 tooltip
                                 cooldownBurn
+                                image {
+                                    full
+                                  }
                             }
                             passive {
                                 name
@@ -131,7 +134,7 @@ function DisplayChampion() {
                     })} */}
             
                    
-                    <Tabs>
+                    {/* <Tabs>
                         <TabList>
                         <Tab>Info</Tab>
                         <Tab>Lore</Tab>
@@ -152,7 +155,7 @@ function DisplayChampion() {
                         <TabPanel>
                         <h2>{lore}</h2>
                         </TabPanel>
-                    </Tabs>
+                    </Tabs> */}
                     </div>
                    
     </Fragment>
