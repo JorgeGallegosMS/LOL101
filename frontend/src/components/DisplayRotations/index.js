@@ -13,6 +13,7 @@ export default function DisplayRotations() {
                     query: `
                     query Champion {
                         rotations {
+                            id
                             name
                             splashArt
                         }
@@ -27,8 +28,10 @@ export default function DisplayRotations() {
                     {rotations.map((champ) => {
                         return (
                             <div>
-                                <h1 class="champ-namer">{champ.name}</h1>
-                                   <img class="imager" src={champ.splashArt}/>
+                                <a href={`/champion/${champ.id}`}>
+                                    <h1 class="champ-namer">{champ.name}</h1>
+                                    <img class="imager" src={champ.splashArt}/>
+                                </a>
                            </div>
                         )
                     })}
@@ -48,7 +51,6 @@ export default function DisplayRotations() {
            <div className="border">
            <div className="champ-grid">
                {rotation}
-            
            </div>
            </div>
 
