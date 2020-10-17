@@ -85,12 +85,43 @@ function DisplayChampion() {
 
             const champion_JSX = (
                 <Fragment>
-                <div class="section-container">
+                <div class="container2">
                   <div class="name-tag">
                         <h1>{name}</h1>
                   </div>
 
-                    <div class="container">
+                    <div class="container3">
+                    <div class="section-container">
+                    <div class="ability-container">
+                    <div class="abilities">
+                    
+                        {spells.map((spell) => {
+                        return (
+                            <div>
+                                <div class="tooltip">
+                                <img src={`http://ddragon.leagueoflegends.com/cdn/10.21.1/img/spell/${spell.image.full}`}/>
+                                <div class="top">
+                                <h1>{spell.name}</h1>
+                                <p>{spell.description}</p>
+                                <p>{spell.cooldownBurn}</p>
+                                </div>
+                                <i></i>
+                            </div>
+                            </div>
+                        )
+                    })}
+                            <div class="tooltip">
+                            <img src={`http://ddragon.leagueoflegends.com/cdn/10.21.1/img/passive/${passive.image.full}`} />
+                            <div class="top">
+                                <p>{passive.name}</p>
+                                <p>{passive.description}</p>
+                                
+                                </div>
+                                </div>
+                    </div>   
+                    </div>
+                    </div>
+                    </div>
                     <div class="champion-title">
                         <h1>Title: {title}</h1>
                     </div>
@@ -99,25 +130,9 @@ function DisplayChampion() {
                     <h1>Tags: {tags.map((tag) => {
                         return <p>{tag}</p>
                     })}</h1>
-                     <h1>Passive:</h1>
-                    <p>{passive.name}</p>
-                    <p>{passive.description}</p>
-                    <img src={`http://ddragon.leagueoflegends.com/cdn/10.21.1/img/passive/${passive.image.full}`} />
-                    <h1>Abilities:</h1>
-                    {spells.map((spell) => {
-                        return (
-                            <div>
-                                <h1>{spell.name}</h1>
-                                <p>{spell.description}</p>
-                                <p>{spell.cooldownBurn}</p>
-                                <img src={`http://ddragon.leagueoflegends.com/cdn/10.21.1/img/spell/${spell.image.full}`}/>
-                            </div>
-                        )
-                    })}
-                      <h1>Skins:</h1>
                       <div class="splash-art"> 
                             <div class="splash">
-                            <h1>{skins[0].name}</h1>
+                            {/* <h1>{skins[0].name}</h1> */}
                             <img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${skins[0].num}.jpg`} alt={name}/>
                             </div>
                             </div>
@@ -156,7 +171,7 @@ function DisplayChampion() {
                         <h2>{lore}</h2>
                         </TabPanel>
                     </Tabs> */}
-                    </div>
+                   
                    
     </Fragment>
             )

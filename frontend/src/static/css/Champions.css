@@ -21,3 +21,122 @@
 
 }
 
+.ability-container {
+    width: 500px;
+    height: 100px;
+    background-color:  #3D494E;
+    position: relative;
+    justify-content: center;
+    outline: 2px solid #D0A85D;
+    outline-offset: 15px;
+    
+}
+
+.abilities {
+    padding: 20px 20px 20px 20px;
+    display: inline-block;
+    grid-gap: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin-left: 25px;
+    animation-name: appear;
+    animation-duration: 2s;
+    transition: all 500ms cubic-bezier(0.550, 0.085, 0.680, 0.530);
+
+
+    
+}
+
+.abilities img {
+    border: 1px solid white;
+    max-height: 70x;
+    max-width: 70px;
+
+}
+
+.tooltip {
+    display:inline-block;
+    position:relative;
+    text-align:left;
+   
+}
+
+
+.tooltip .top {
+    min-width:200px;
+    max-width:400px;
+    top:50%;
+    left:100%;
+    margin-left:20px;
+    transform:translate(0, -50%);
+    padding:10px 20px;
+    color: #444444;
+    background-color:#EEEEEE;
+    font-weight:normal;
+    font-size:13px;
+    border-radius:8px;
+    position:absolute;
+    z-index:99999999;
+    box-sizing:border-box;
+    box-shadow:0 1px 8px rgba(0,0,0,0.5);
+    visibility:hidden; opacity:0; transition:opacity 0.8s;
+}
+
+.tooltip:hover .top {
+    visibility:visible; opacity:1;
+}
+
+
+
+.tooltip .top i {
+    position:absolute;
+    top:50%;
+    right:100%;
+    margin-top:-12px;
+    width:12px;
+    height:24px;
+    overflow:hidden;
+}
+.tooltip .top i::after {
+    content:'';
+    position:absolute;
+    width:12px;
+    height:12px;
+    left:0;
+    top:50%;
+    transform:translate(50%,-50%) rotate(-45deg);
+    background-color:#EEEEEE;
+    box-shadow:0 1px 8px rgba(0,0,0,0.5);
+}
+
+.splash-art {
+    grid-area: 1 / col4-start / last-line / 6;
+    background-color:  #3D494E;
+    position: relative;
+    margin-right: 100px;
+    overflow: hidden;
+    display: inline-block;
+    outline: 1px solid #D0A85D;
+    outline-offset: 15px;
+    transition: all 400ms ease;
+}
+
+.splash img {
+    width: 600px;
+    height: 600px;
+    background: cover;
+    object-fit: cover;
+    object-position: 83% 50%;
+    overflow: hidden;
+    position: relative;
+    transition: transform .5s ease;
+    transition: all 400ms ease;
+
+}
+
+.splash img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 2px -2px white;
+    animation-timing-function: ease-in-out;
+    transition: all 400ms ease;   
+}
