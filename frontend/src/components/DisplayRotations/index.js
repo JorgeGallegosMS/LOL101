@@ -27,8 +27,10 @@ export default function DisplayRotations() {
                     {rotations.map((champ) => {
                         return (
                             <div>
-                                <h1 class="champ-namer">{champ.name}</h1>
-                                   <img class="imager" src={champ.splashArt}/>
+                                <a href={`/champion/${champ.name}`}>
+                                    <h1 class="champ-namer">{champ.name}</h1>
+                                    <img class="imager" src={champ.splashArt}/>
+                                </a>
                            </div>
                         )
                     })}
