@@ -40,7 +40,7 @@
 }
 
 .nav-rota header {
-    border-bottom: 1px solid rgb(211, 203, 203);
+    background-color: #334649;
     animation-name: appear;
     animation-duration: 2s;
     transition: all 500ms cubic-bezier(0.550, 0.085, 0.680, 0.530);
@@ -110,7 +110,7 @@
 
 
 
-img:hover {
+.imager img:hover {
     opacity: 0.80;
     animation-timing-function: ease-in-out;
     transition: all 400ms ease;

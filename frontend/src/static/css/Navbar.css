@@ -52,8 +52,6 @@ nav > ul li a {
     letter-spacing: 1px;
     margin: 30px auto;
     padding: 0px 20px;
-
-
     
 }
 
@@ -61,8 +59,39 @@ nav {
     flex: 2;
     top: 0;
     margin: 30px auto; 
-
+    animation-name: appear;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
     
+}
+
+.logo-container > #lol1 {
+    color: white;
+    border-top: 1px solid white;
+}
+
+.logo-container > #lol1:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    height: 1em;
+    width: 9%;
+    border-bottom: 1px solid;
+    margin-top: 10px;
+    opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: scale(0,1);
+    transform: scale(0,1);
+    color: #D0A85D;
+}
+
+.logo-container > #lol1:hover:after {
+    opacity: 1;
+	-webkit-transform: scale(1);
+    transform: scale(1);
+   
 }
 
 .logo-container, .nav-links {
@@ -79,6 +108,12 @@ ul {
     font-weight: 100;
     
     
+}
+
+
+@keyframes appear {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
 }
 
 

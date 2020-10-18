@@ -6,7 +6,7 @@ export default function Navbar() {
     return (
         <header>
             <div className="logo-container">
-                <Link to="/">LOL101</Link>
+                <Link id="lol1" to="/">LOL101</Link>
             </div>
             <nav>
                 <ul className="nav-links">

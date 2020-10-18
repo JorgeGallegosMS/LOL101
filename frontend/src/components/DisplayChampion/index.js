@@ -86,8 +86,9 @@ function DisplayChampion() {
             const champion_JSX = (
                 <Fragment>
                 <div class="container2">
-                  <div class="name-tag">
+                  <div class="champion-title">
                         <h1>{name}</h1>
+                  </div>
                   </div>
 
                     <div class="container3">
@@ -113,40 +114,56 @@ function DisplayChampion() {
                             <div class="tooltip">
                             <img src={`http://ddragon.leagueoflegends.com/cdn/10.21.1/img/passive/${passive.image.full}`} />
                             <div class="top">
-                                <p>{passive.name}</p>
+                                <h1>{passive.name}</h1>
                                 <p>{passive.description}</p>
                                 
                                 </div>
-                                </div>
-                    </div>   
+                                </div> 
                     </div>
                     </div>
+                
+                    <div class="a-b-container">
+                    <Tabs>
+                        <TabList>
+                            <Tab>Info</Tab>
+                            <Tab>Lore</Tab>
+                            <Tab>Items</Tab>
+                        </TabList>
+                        <TabPanel>
+                            <h3>Difficulty: {info.difficulty}</h3>
+                            <h1>{tags.map((tag) => {
+                                return (
+                                    <h4>Class: {tag}</h4>
+                                )
+                            })}</h1>
+                            <span id="id">
+                            <h3><strong>Playing As:</strong></h3> {allytips.map((tip) => {
+                                return <p>{tip}</p>
+                            })}
+                            <h3><strong>Playing Against:</strong></h3> {enemytips.map((tip) => {
+                                return <p>{tip}</p>
+                            })}
+                            </span>
+                        </TabPanel>
+                        <TabPanel>
+                            <h3>{lore}</h3>
+                        </TabPanel>
+                        <TabPanel>
+                            <h2>Placeholder</h2>
+                        </TabPanel>
+                    </Tabs>
                     </div>
-                    <div class="champion-title">
-                        <h1>Title: {title}</h1>
-                    </div>
-                    </div>
-                    {/* <h1>Icon: <img src={`http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/${image.full}`} alt={name}/></h1> */}
-                    <h1>Tags: {tags.map((tag) => {
-                        return <p>{tag}</p>
-                    })}</h1>
+                    
                       <div class="splash-art"> 
                             <div class="splash">
-                            {/* <h1>{skins[0].name}</h1> */}
                             <img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${skins[0].num}.jpg`} alt={name}/>
+                            <div class="name-tag">
+                        <h1>{title}</h1>
+                        </div>
                             </div>
                             </div>
-                            
-                        {/* {skins.map((skin) => {
-                        return ( 
-                            <div class="splash-art"> 
-                            <div class="splash">
-                            <h1>{skins[0].name}</h1>
-                            <img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${skins[0].num}.jpg`} alt={name}/>
-                        </div>
-                        </div>
-                        )
-                    })} */}
+                            </div>
+                            </div>
             
                    
                     {/* <Tabs>

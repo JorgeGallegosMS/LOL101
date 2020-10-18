@@ -86,7 +86,6 @@ export default function DisplayChampions() {
                 {/* On input */}
                 <div className="searchbar-container">
                 <input class="searchinp" type="text" value={search} onInput={(e)=>updateSearch(e)} placeholder="Search for champions"/> 
-                <button class="subbutton" type="submit">Search</button>
                 </div>
             </form> 
             {/* instead of champions1 its filtered champions */}
