@@ -101,7 +101,7 @@
 }
 
 .border {
-    border: 3px solid #D0A85D;
+    border: 2px solid #D0A85D;
     margin: auto;
     animation-name: appear;
     animation-duration: 5s;
@@ -122,3 +122,4 @@
     0% { opacity: 0 }
     100% { opacity: 1 }
 } 
+
