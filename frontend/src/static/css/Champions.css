@@ -18,6 +18,343 @@
     grid-template-areas: "showcase showcase top-box-a";
     padding-top: 50px;
     justify-items: center;
+   
 
 }
 
+.ability-container {
+    width: 500px;
+    height: 100px;
+    background-color:  #3D494E;
+    position: relative;
+    justify-content: center;
+    outline: 2px solid #D0A85D;
+    outline-offset: 15px;
+    
+}
+
+.abilities {
+    padding: 20px 10px 0px 0px;
+    display: inline-block;
+    grid-gap: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    margin-left: 25px;
+    animation-name: appear;
+    animation-duration: 2s;
+    transition: all 500ms cubic-bezier(0.550, 0.085, 0.680, 0.530);
+
+
+    
+}
+
+.abilities img {
+    border: 1px solid white;
+    max-height: 70x;
+    max-width: 70px;
+
+}
+
+.tooltip {
+    display:inline-block;
+    position:relative;
+    text-align:left;
+   
+}
+
+
+.tooltip .top {
+    min-width:200px;
+    max-width:400px;
+    top:50%;
+    left:100%;
+    margin-left:20px;
+    transform:translate(0, -50%);
+    padding:10px 20px;
+    color: #444444;
+    background-color:#EEEEEE;
+    font-weight:normal;
+    font-size:13px;
+    border-radius:8px;
+    position:absolute;
+    z-index:99999999;
+    box-sizing:border-box;
+    box-shadow:0 1px 8px rgba(0,0,0,0.5);
+    visibility:hidden; opacity:0; transition:opacity 0.8s;
+}
+
+.tooltip:hover .top {
+    visibility:visible; opacity:1;
+}
+
+
+
+.tooltip .top i {
+    position:absolute;
+    top:50%;
+    right:100%;
+    margin-top:-12px;
+    width:12px;
+    height:24px;
+    overflow:hidden;
+}
+.tooltip .top i::after {
+    content:'';
+    position:absolute;
+    width:12px;
+    height:12px;
+    left:0;
+    top:50%;
+    transform:translate(50%,-50%) rotate(-45deg);
+    background-color:#EEEEEE;
+    box-shadow:0 1px 8px rgba(0,0,0,0.5);
+}
+
+.tooltip > .top h1 {
+    color: black;
+    font-size: 16px;
+   
+}
+
+.tooltip > .top p {
+    font-size: 13px;
+}
+
+.tooltip p {
+    color: black;
+    font-size: 15px;
+}
+
+.splash-art {
+    grid-area: 1 / col4-start / last-line / 6;
+    background-color:  #3D494E;
+    position: relative;
+    margin-right: 100px;
+    overflow: hidden;
+    display: inline-block;
+    outline: 1px solid #D0A85D;
+    outline-offset: 15px;
+    transition: all 400ms ease;
+}
+
+.splash img {
+    width: 45vw;
+    height: 50vw;
+    background: cover;
+    object-fit: cover;
+    object-position: 83% 50%;
+    overflow: hidden;
+    position: relative;
+    transition: transform .5s ease;
+    animation-name: appear;
+    animation-duration: 2s;
+    transition: all 300ms cubic-bezier(0.550, 0.085, 0.680, 0.530);
+
+}
+
+.splash img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 2px -2px white;
+    animation-timing-function: ease-in-out;
+    transition: all 400ms ease;   
+}
+
+.champion-title > h1 {
+    padding-top: 3%;
+    padding-right: 55%;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    transition: all 400ms ease; 
+    color: white;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    animation-name: appear;
+    animation-duration: 2s;
+    transition: all 500ms cubic-bezier(0.550, 0.085, 0.680, 0.530);
+}
+
+
+.splash img:hover ~ .name-tag h1 {
+    padding-right: 50px;
+    transition: all 400ms ease-in-out;
+}
+
+.name-tag h1 {
+    transition: all 400ms ease-in-out;
+    color: rgb(238, 232, 232);
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    
+}
+
+.a-b-container {
+    width: 600px;
+    height: 600px;
+    background-color:  #3D494E;
+    grid-column-start: 1;
+    grid-row-start: 2;
+    grid-row-end: span 2;
+    margin-left: 30px;
+    outline: 1px solid #D0A85D;
+    outline-offset: 15px;
+    border-radius: 30px;
+    border: 1px solid white;
+    box-sizing: border-box;
+    background-image: linear-gradient(to right, white 100px, transparent 100px), linear-gradient(to bottom, white 50px, transparent 50px), linear-gradient(to right,white 50px, transparent 50px), linear-gradient(to bottom,white 50px, transparent 50px);
+    background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+    background-repeat: no-repeat;
+    background-position: 0px 0px, right -50px, 200px bottom, 0px 200px;
+    animation: border 5s linear infinite;
+    transition: 500ms;
+    overflow: hidden;
+    overflow: scroll;
+    
+
+   
+    
+
+}
+
+.name-tag {
+    background-color: #3C484D;
+    height: 70px;
+    width: 500px;
+    position: relative;
+    z-index: 999;
+    padding-top: 10px;
+    text-align: center;
+    letter-spacing: 2px;
+    padding-left: 40px;
+    display: inline-block;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+}
+
+#react-tabs-0 {
+    font-size: 20px;
+    padding: 30px 30px 30px 30px;
+    letter-spacing: 2px;  
+    
+}
+
+#react-tabs-1 p {
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif; 
+    font-weight: 300; 
+    text-align: center;
+    margin: 0 0 20px; 
+    padding-left: -10px;
+    color: rgb(230, 223, 223);
+    
+}
+
+
+
+#react-tabs-1 h3 {
+    font-size: 23px;
+    font-family: 'Open Sans', sans-serif; 
+    font-weight: 300; 
+    text-align: center;
+    margin: 0 0 20px; 
+    padding-left: -10px;
+    color: rgb(230, 223, 223);
+    padding-top: 10%;
+}
+
+h3 > strong {
+    color: rgb(230, 223, 223);
+  
+}
+
+
+
+#react-tabs-1 h4 {
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif; 
+    font-weight: 300; 
+    text-align: center;
+    margin: 0 0 20px; 
+    padding-left: -10px;
+    color: rgb(230, 223, 223);
+}
+
+#react-tabs-1 {
+    animation-name: appear;
+    animation-duration: 2s;
+    transition: all 500ms cubic-bezier(0.550, 0.085, 0.680, 0.530);
+
+}
+
+#react-tabs-2 {
+    font-size: 20px;
+    padding: 30px 30px 30px 30px;
+    letter-spacing: 2px;  
+        
+}
+
+#react-tabs-3 {
+    animation-name: appear;
+    animation-duration: 2s;
+    transition: all 500ms cubic-bezier(0.550, 0.085, 0.680, 0.530);
+
+}
+#react-tabs-3 h3 {
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif; 
+    font-weight: 300; 
+    text-align: center;
+    margin: 25 25 35px; 
+    padding-left: -10px;
+    color: rgb(230, 223, 223);
+    padding-top: 10%;
+    margin: 50px 30px 30px 20px;
+    letter-spacing: 0.3px;
+}
+
+#react-tabs-4 {
+    font-size: 20px;
+    padding: 30px 30px 30px 30px;
+    letter-spacing: 2px; 
+}
+
+#id > p {
+    border-bottom: 1px solid rgb(44, 44, 44);
+    padding: 10px 10px 10px 10px;
+    padding-bottom: 30px;
+}
+
+
+@keyframes appear {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+}
+
+
+@keyframes border {
+    20% {
+      background-position: 150px 0px, right -50px, 600px bottom, 0px 600px;
+    }
+    25% {
+      background-position: 600px 0px, right 0px, 600px bottom, 0px 600px;
+    }
+    45% {
+      background-position: 600px 0px, right 150px, 600px bottom, 0px 600px;
+    }
+    50% {
+      background-position: 600px 0px, right 200px, 150px bottom, 0px 600px;
+    }
+    70% {
+      background-position: 600px 0px, right 600px, 0px bottom, 0px 600px;
+    }
+    75% {
+      background-position: 600px 0px, right 600px, -50px bottom, 0px 150px;
+    }
+    95% {
+      background-position: 600px 0px, right 600px, -50px bottom, 0px 0px;
+    }
+    95.1% {
+      background-position: -50px 0px, right 600px, -50px bottom, 0px 0px;
+    }
+    100% {
+      background-position: 0px 0px, right 600px, -50px bottom, 0px -50px;
+    }
+  }
