@@ -9,7 +9,7 @@ const { port, environment } = require('./vars/appVars')
 app.use(cors())
 
 if (environment === 'production') {
-  express.static('frontend/build')
+  app.use(express.static('frontend/build'))
 }
 
 const schema = new GraphQLSchema({
