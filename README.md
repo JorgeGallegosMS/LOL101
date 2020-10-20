@@ -5,11 +5,11 @@ LOL101 is an account stats/game info website targeted mostly towards beginners. 
 # Installation
 
 Clone this repository
-'''bash
+```bash
 git clone git@github.com:JorgeGallegosMS/LOL101.git
-'''
+```
 
 Run the application
-'''bash
+```bash
 npm run dev
-'''
+```
