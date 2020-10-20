@@ -1,0 +1,21 @@
+import React from 'react'
+import { Link } from 'react-router-dom'
+import '../../static/css/Navbar.css'
+
+export default function Navbar() {
+    return (
+        <header>
+            <div className="logo-container">
+                <Link id="lol1" to="/">LOL101</Link>
+            </div>
+            <nav>
+                <ul className="nav-links">
+                    <li><Link to="/">About</Link></li>
+                    <li><Link to="/">Resources</Link></li>
+                    <li><Link to="/">Masteries</Link></li>
+                    <li><Link to="/rotations">Champion Rotation</Link></li>
+                </ul>
+            </nav>
+        </header>
+    )
+}

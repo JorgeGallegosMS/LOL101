@@ -1,0 +1,124 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+  
+    
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+   
+}
+
+header { 
+    display: flex;
+    width: 100%;
+    height: 20%;
+    margin: auto;
+    background-color: #3D494E;
+    overflow: hidden;
+    position: relative;
+    
+}
+
+
+nav > ul li a:hover {
+    bottom: 10px;
+    opacity: 1;
+    box-shadow: 0px 0px 0px 2px #D0A85D;
+    opacity: 2;
+    color: rgb(199, 196, 196);
+}
+
+nav > ul li a {
+    padding: 0 15px;
+    color: white; 
+    transition: box-shadow 0.6s ease-in-out;
+    margin: 0.5em;
+    padding: 5px 5px 5px 5px;
+   
+
+}
+
+.logo-container {
+    flex: 1;
+    font-size: 20px;
+    font-weight: 900;
+    margin-left: 31px;
+    letter-spacing: 1px;
+    margin: 30px auto;
+    padding: 0px 20px;
+    
+}
+
+nav {
+    flex: 2;
+    top: 0;
+    margin: 30px auto; 
+    animation-name: appear;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    
+}
+
+.logo-container > #lol1 {
+    color: white;
+    border-top: 1px solid white;
+}
+
+.logo-container > #lol1:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    height: 1em;
+    width: 9%;
+    border-bottom: 1px solid;
+    margin-top: 10px;
+    opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: scale(0,1);
+    transform: scale(0,1);
+    color: #D0A85D;
+}
+
+.logo-container > #lol1:hover:after {
+    opacity: 1;
+	-webkit-transform: scale(1);
+    transform: scale(1);
+   
+}
+
+.logo-container, .nav-links {
+    display: flex;
+    
+}
+
+ul {
+    color: white;
+}
+
+.nav-links {
+    justify-content: space-around;
+    font-weight: 100;
+    
+    
+}
+
+
+@keyframes appear {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+}
+
+
+
+
+
+
+
