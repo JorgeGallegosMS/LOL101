@@ -14,7 +14,7 @@ export default function DisplayChampions() {
     useEffect( () => {
         async function grabIds() {
             const data = await axios({
-                url: '/graphql',
+                url: `${process.env.URL}/graphql`,
                 method: 'post',
                 data: {
                     query: `
