@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Home from './pages/Home'
 import ChampionRotation from './pages/ChampionRotation'
-import DisplayChampion from './components/DisplayChampion'
 import Champion from './pages/Champion'
 
 function App() {
