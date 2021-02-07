@@ -101,7 +101,7 @@ function DisplayChampion() {
                         return (
                             <div>
                                 <div className="tooltip">
-                                <img src={`http://ddragon.leagueoflegends.com/cdn/10.21.1/img/spell/${spell.image.full}`}/>
+                                <img src={`http://ddragon.leagueoflegends.com/cdn/11.3.1/img/spell/${spell.image.full}`}/>
                                 <div className="top">
                                 <h1>{spell.name}</h1>
                                 <p>{spell.description}</p>
@@ -113,7 +113,7 @@ function DisplayChampion() {
                         )
                     })}
                             <div className="tooltip">
-                            <img src={`http://ddragon.leagueoflegends.com/cdn/10.21.1/img/passive/${passive.image.full}`} />
+                            <img src={`http://ddragon.leagueoflegends.com/cdn/11.3.1/img/passive/${passive.image.full}`} />
                             <div className="top">
                                 <h1>{passive.name}</h1>
                                 <p>{passive.description}</p>
