@@ -134,7 +134,7 @@ function DisplayChampion() {
                             <h3>Difficulty: {info.difficulty}</h3>
                             {tags.map((tag) => {
                                 return (
-                                    <h4>className: {tag}</h4>
+                                    <h4>Class: {tag}</h4>
                                 )
                             })}
                             <span id="id">
