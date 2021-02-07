@@ -2,6 +2,7 @@ import React, { useState, useEffect, Fragment } from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import '../../static/css/Champions.css'
+import 'dotenv/config'
 
 import {
     BrowserRouter as Router,
@@ -22,7 +23,7 @@ function DisplayChampion() {
             const champion = "Tryndamere"
             console.log("Made it here")
             const data = await axios({
-                url: '/graphql',
+                url: `${process.env.REACT_APP_PROXY}/graphql`,
                 method: 'post',
                 data: {
                     query: `
@@ -78,30 +79,30 @@ function DisplayChampion() {
                 }
             })
   
-
+            console.log(data)
           
             // console.log(data.data.data.champion)
             const {id, name, image, title, info, lore, allytips, enemytips, tags, skins, passive, spells} = data.data.data.champion
 
             const champion_JSX = (
                 <Fragment>
-                <div class="container2">
-                  <div class="champion-title">
+                <div className="container2">
+                  <div className="champion-title">
                         <h1>{name}</h1>
                   </div>
                   </div>
 
-                    <div class="container3">
-                    <div class="section-container">
-                    <div class="ability-container">
-                    <div class="abilities">
+                    <div className="container3">
+                    <div className="section-container">
+                    <div className="ability-container">
+                    <div className="abilities">
                     
                         {spells.map((spell) => {
                         return (
                             <div>
-                                <div class="tooltip">
+                                <div className="tooltip">
                                 <img src={`http://ddragon.leagueoflegends.com/cdn/10.21.1/img/spell/${spell.image.full}`}/>
-                                <div class="top">
+                                <div className="top">
                                 <h1>{spell.name}</h1>
                                 <p>{spell.description}</p>
                                 <p>{spell.cooldownBurn}</p>
@@ -111,9 +112,9 @@ function DisplayChampion() {
                             </div>
                         )
                     })}
-                            <div class="tooltip">
+                            <div className="tooltip">
                             <img src={`http://ddragon.leagueoflegends.com/cdn/10.21.1/img/passive/${passive.image.full}`} />
-                            <div class="top">
+                            <div className="top">
                                 <h1>{passive.name}</h1>
                                 <p>{passive.description}</p>
                                 
@@ -122,7 +123,7 @@ function DisplayChampion() {
                     </div>
                     </div>
                 
-                    <div class="a-b-container">
+                    <div className="a-b-container">
                     <Tabs>
                         <TabList>
                             <Tab>Info</Tab>
@@ -131,11 +132,11 @@ function DisplayChampion() {
                         </TabList>
                         <TabPanel>
                             <h3>Difficulty: {info.difficulty}</h3>
-                            <h1>{tags.map((tag) => {
+                            {tags.map((tag) => {
                                 return (
-                                    <h4>Class: {tag}</h4>
+                                    <h4>className: {tag}</h4>
                                 )
-                            })}</h1>
+                            })}
                             <span id="id">
                             <h3><strong>Playing As:</strong></h3> {allytips.map((tip) => {
                                 return <p>{tip}</p>
@@ -154,10 +155,10 @@ function DisplayChampion() {
                     </Tabs>
                     </div>
                     
-                      <div class="splash-art"> 
-                            <div class="splash">
+                      <div className="splash-art"> 
+                            <div className="splash">
                             <img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${id}_${skins[0].num}.jpg`} alt={name}/>
-                            <div class="name-tag">
+                            <div className="name-tag">
                         <h1>{title}</h1>
                         </div>
                             </div>

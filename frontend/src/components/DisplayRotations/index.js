@@ -7,7 +7,7 @@ export default function DisplayRotations() {
     useEffect( () => {
         async function postrequest() {
             const data = await axios({
-                url: '/graphql',
+                url: 'http://localhost:5000/graphql',
                 method: 'post',
                 data: {
                     query: `
