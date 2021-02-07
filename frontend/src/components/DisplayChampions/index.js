@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ChampionList from '../ChampionList'
+import 'dotenv/config'
 const axios = require("axios")
 // 1st Issue, it could randomly error
 // 2nd Issue, need to wait till search STATE is set before activating filter.
@@ -14,7 +15,7 @@ export default function DisplayChampions() {
     useEffect( () => {
         async function grabIds() {
             const data = await axios({
-                url: 'http://localhost:5000/graphql',
+                url: `${process.env.REACT_APP_PROXY}/graphql`,
                 method: 'post',
                 data: {
                     query: `
@@ -31,7 +32,7 @@ export default function DisplayChampions() {
             const champions = await grabIds()
             const p = champions.map((champ) => {
                 return axios({
-                    url: 'http://localhost:5000/graphql',
+                    url: `${process.env.REACT_APP_PROXY}/graphql`,
                     method: 'post',
                     data: {
                         query: `
