@@ -5,6 +5,14 @@ const { GraphQLString, GraphQLObjectType, GraphQLList } = require('graphql')
 const axios = require('axios')
 const { apiKey } = require('../vars/appVars')
 
+let version
+
+const response = axios.get('https://ddragon.leagueoflegends.com/api/versions.json')
+  .then(data => {
+    version = data.data[0]
+    console.log(version)
+  })
+
 const RootQueryType = new GraphQLObjectType({
   name: 'RootQuery',
   description: 'The root query',
@@ -18,7 +26,7 @@ const RootQueryType = new GraphQLObjectType({
       type: GraphQLList(GraphQLString),
       description: 'A list of champion names',
       resolve: async () => {
-        const response = await axios.get('http://ddragon.leagueoflegends.com/cdn/10.21.1/data/en_US/champion.json')
+        const response = await axios.get(`http://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/champion.json`)
         const data = response.data.data
         return Object.keys(data)
       }
@@ -32,7 +40,7 @@ const RootQueryType = new GraphQLObjectType({
         }
       },
       resolve: async (root, { name }) => {
-        const response = await axios.get(`http://ddragon.leagueoflegends.com/cdn/10.21.1/data/en_US/champion/${name}.json`)
+        const response = await axios.get(`http://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/champion/${name}.json`)
         return response.data.data[name]
       }
     },
@@ -45,7 +53,7 @@ const RootQueryType = new GraphQLObjectType({
         }
       },
       resolve: async (root, { id }) => {
-        const response = await axios.get('http://ddragon.leagueoflegends.com/cdn/10.21.1/data/en_US/item.json')
+        const response = await axios.get(`http://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/item.json`)
         return response.data.data[id]
       }
     },
@@ -54,7 +62,7 @@ const RootQueryType = new GraphQLObjectType({
       description: 'Data for free champions in the rotations',
       resolve: async () => {
         const response = await axios.get(`https://na1.api.riotgames.com/lol/platform/v3/champion-rotations?api_key=${apiKey}`)
-        const data = await axios.get('http://ddragon.leagueoflegends.com/cdn/10.21.1/data/en_US/champion.json')
+        const data = await axios.get(`http://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/champion.json`)
         
         // List of champion ids in the free rotation
         const champIds = response.data.freeChampionIds
