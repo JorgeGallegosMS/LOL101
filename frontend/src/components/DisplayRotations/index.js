@@ -7,7 +7,7 @@ export default function DisplayRotations() {
     useEffect( () => {
         async function postrequest() {
             const data = await axios({
-                url: `${process.env.REACT_APP_PROXY}/graphql`,
+                url: `https://lol101-spd.herokuapp.com/graphql`,
                 method: 'post',
                 data: {
                     query: `
