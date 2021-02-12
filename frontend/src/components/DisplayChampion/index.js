@@ -23,7 +23,7 @@ function DisplayChampion() {
             const champion = "Tryndamere"
             console.log("Made it here")
             const data = await axios({
-                url: `${process.env.REACT_APP_PROXY}/graphql`,
+                url: `/graphql`,
                 method: 'post',
                 data: {
                     query: `
