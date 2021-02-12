@@ -32,7 +32,7 @@ export default function DisplayChampions() {
             const champions = await grabIds()
             const p = champions.map((champ) => {
                 return axios({
-                    url: `${process.env.REACT_APP_PROXY}/graphql`,
+                    url: `/graphql`,
                     method: 'post',
                     data: {
                         query: `
