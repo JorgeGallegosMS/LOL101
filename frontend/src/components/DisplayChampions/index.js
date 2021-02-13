@@ -29,7 +29,7 @@ export default function DisplayChampions() {
         async function postrequest() {
             // console.log(await grabIds())
             const champions = await grabIds()
-            const p = champions.map((champ) => {
+            const p = champions.map((champ) => { // This runs for every champion in the game, can be improved -------------------------------------------------------------------
                 return axios({
                     url: `/graphql`,
                     method: 'post',
