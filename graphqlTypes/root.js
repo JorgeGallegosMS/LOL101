@@ -1,6 +1,8 @@
 const ChampionType = require('./champion')
 const ItemType = require('./item')
 const RotationChampType = require('./rotations')
+const ChampionListType = require('./championList')
+
 const { GraphQLString, GraphQLObjectType, GraphQLList } = require('graphql')
 const axios = require('axios')
 const { apiKey } = require('../vars/appVars')
@@ -22,15 +24,15 @@ const RootQueryType = new GraphQLObjectType({
       description: 'This is a test',
       resolve: () => 'Hello'
     },
-    champIds: {
-      type: GraphQLList(GraphQLString),
-      description: 'A list of champion names',
-      resolve: async () => {
-        const response = await axios.get(`http://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/champion.json`)
-        const data = response.data.data
-        return Object.keys(data)
-      }
-    },
+    // champIds: {
+    //   type: GraphQLList(GraphQLString),
+    //   description: 'A list of champion names',
+    //   resolve: async () => {
+    //     const response = await axios.get(`http://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/champion.json`)
+    //     const data = response.data.data
+    //     return Object.keys(data)
+    //   }
+    // },
     champion: {
       type: ChampionType,
       description: 'Data for a single champion',
@@ -75,6 +77,19 @@ const RootQueryType = new GraphQLObjectType({
           }
         }
         return rotationInfo
+      }
+    },  
+    championList: {
+      type: new GraphQLList(ChampionListType),
+      description: 'A list of champion names/ids/icons',
+      resolve: async () => {
+        const response = await axios.get(`http://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/champion.json`)
+        const data = response.data.data
+        const champList = []
+        for (champion in data) {
+          champList.push({id: data[champion].id, name: data[champion].name, icon: `http://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${data[champion].image.full}`})
+        }
+        return champList
       }
     }
   })

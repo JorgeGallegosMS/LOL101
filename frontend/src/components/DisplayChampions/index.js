@@ -12,45 +12,25 @@ export default function DisplayChampions() {
     const [loadingState, setLoadingState] = useState("Loading...")
 
     useEffect( () => {
-        async function grabIds() {
-            const data = await axios({
-                url: `/graphql`,
-                method: 'post',
-                data: {
-                    query: `
-                    query Champion {
-                        champIds
-                    }
-                    `
-                }
-            })
-            return data.data.data.champIds
-        }
         async function postrequest() {
-            // console.log(await grabIds())
-            const champions = await grabIds()
-            const p = champions.map((champ) => { // This runs for every champion in the game, can be improved -------------------------------------------------------------------
-                return axios({
+            const p = await axios({
                     url: `/graphql`,
                     method: 'post',
                     data: {
                         query: `
                         query Champion {
-                            champion(name: "${champ}") {
-                            name
-                            id
-                            image {
-                                full
+                            championList {
+                                id
+                                name
+                                icon
                             }
-                            }
-                            }
+                        }
                         `
                     }
                 })
-            })
-            const values = await axios.all(p)
+            const values = p.data.data.championList
             // Set all champions here
-            setAllChampions(values.map((champion)=> champion.data.data.champion))
+            setAllChampions(values)
             setLoadingState("Finished!")
         }
         postrequest()
