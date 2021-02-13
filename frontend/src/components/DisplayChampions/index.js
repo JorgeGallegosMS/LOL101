@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import ChampionList from '../ChampionList'
-import 'dotenv/config'
 const axios = require("axios")
 // 1st Issue, it could randomly error
 // 2nd Issue, need to wait till search STATE is set before activating filter.

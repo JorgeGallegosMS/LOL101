@@ -2,7 +2,6 @@ import React, { useState, useEffect, Fragment } from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import '../../static/css/Champions.css'
-import 'dotenv/config'
 
 import {
     BrowserRouter as Router,
