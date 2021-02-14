@@ -62,7 +62,7 @@ function DisplayChampion() {
                                 }
                             }
                             recommended {
-                                title
+                                mode
                                 blocks {
                                     type
                                     showIfSummonerSpell
@@ -82,7 +82,50 @@ function DisplayChampion() {
           
             // console.log(data.data.data.champion)
             const {id, name, image, title, info, lore, allytips, enemytips, tags, skins, passive, spells} = data.data.data.champion
-
+            const itemList = []
+            const {recommended} = data.data.data.champion
+            recommended.forEach(map => {
+                if (map["mode"] == "CLASSIC") {  
+                    map["blocks"].forEach(block => {
+                        console.log(block)
+                        block["items"].forEach(item => {
+                            itemList.push(item["id"])
+                        })
+                    })
+                }
+            });
+            console.log(itemList)
+            
+            
+                
+            const items = await axios({
+                url: `/graphql`,
+                method: 'post',
+                data: {
+                    query: `
+                    query Champion {
+                        items(ids: "${itemList}") {
+                            name
+                            description
+                            plaintext
+                            into
+                            image {
+                            full
+                            }
+                            gold {
+                            base
+                            total
+                            sell
+                            }
+                        }
+                    }
+                    `
+                }
+            }).catch((err) => {
+                console.log(err)
+            })
+            console.log(items)
+            
             const champion_JSX = (
                 <Fragment>
                 <div className="container2">
