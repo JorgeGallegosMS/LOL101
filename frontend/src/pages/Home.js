@@ -12,9 +12,9 @@ export default function Home() {
                 <section className="home">
                     <div className="champions">
                     <div className="rectangle">
-                    <h3>Choose Your<text> Legend</text></h3>
+                    {/* <h3>Choose Your<text> Legend</text></h3> */}
                     </div>
-                    <DisplayChampions/>
+                    {/* <DisplayChampions/> */}
                     </div>
                 </section>
             </main>
