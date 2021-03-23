@@ -30,9 +30,10 @@ export default function DisplayRotations() {
                 <Fragment>
                     {rotations.map((champ) => {
                         return (
-                            <div>
+                            <div className="cell">
                                 <a href={`/champion/${champ.id}`}>
                                     <img className="imager" src={champ.splashArt}/>
+                                    <div className="overlaybg"></div>
                                     <h1 className="champ-namer">{champ.name}</h1>
                                 </a>
                            </div>
@@ -53,9 +54,7 @@ export default function DisplayRotations() {
            </div>
             <div className="container1"></div>
            <div className="champ-grid">
-               <div className="cell">
                {rotation}
-               </div>
                </div>
         </Fragment>
     )
