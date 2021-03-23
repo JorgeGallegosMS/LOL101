@@ -32,8 +32,8 @@ export default function DisplayRotations() {
                         return (
                             <div>
                                 <a href={`/champion/${champ.id}`}>
-                                    <h1 className="champ-namer">{champ.name}</h1>
                                     <img className="imager" src={champ.splashArt}/>
+                                    <h1 className="champ-namer">{champ.name}</h1>
                                 </a>
                            </div>
                         )
@@ -51,11 +51,14 @@ export default function DisplayRotations() {
             <div className="hero-title">
                <h2>Current Champion Rotation</h2>
            </div>
-           <div className="border">
+            <div className="container1"></div>
            <div className="champ-grid">
+               <div className="cell">
                {rotation}
-           </div>
-           </div>
+               </div>
+               </div>
+           
+        
 
             
         </Fragment>

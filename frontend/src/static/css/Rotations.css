@@ -4,15 +4,14 @@
 
 
 .rotation {
-    background-image: url("../../static/images/test2-edit.jpg");
-    animation-name: appear1;
+    background-image: url("../../static/images/rotation-bg.png");
+    width: 100%;
+    background-repeat: no-repeat; 
     background-size: cover;
-    animation-duration: 2s;
-    transition: all 500ms cubic-bezier(0.550, 0.085, 0.680, 0.530);
-    color: white;
 }
 
-.container1 {
+
+/* .container1 {
         width: 100%;
         animation-name: appear;
         animation-duration: 2s;
@@ -20,48 +19,52 @@
         align-items: center;
         justify-content: center;
         display: flex;
-        
-    
-}
+           
+} */
 
 
 .champ-grid {
-    padding: 40px 20px 40px 20px;
-    margin: auto;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 25px;
-    justify-items: center;
-    overflow: hidden;
-    overflow: hidden;
-    
-    
-
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1rem;
 }
 
-.nav-rota header {
-    background-color: #334649;
-    animation-name: appear;
-    animation-duration: 2s;
-    transition: all 500ms cubic-bezier(0.550, 0.085, 0.680, 0.530);
+.champ-grid > .cell {
+    padding: 1rem;
+  position: relative
 }
+
+.champ-grid > .cell::before {
+    padding: 1rem;
+  position: relative
+}
+
+.champ-grid:before {
+        content: '';
+        width: 0;
+        padding-bottom: 100%;
+        grid-row: 1 / 1;
+        grid-column: 1 / 1;
+    
+}
+
+
 
 .champ-namer {
     color: #eeecec;
     text-align: center;
     font-size: 16px;
     letter-spacing: 1px;
-    margin: 0px 0px 10px 0px;
+
     animation-name: appear;
     animation-duration: 5s;
     transition: all 500ms cubic-bezier(0.550, 0.085, 0.680, 0.530);
 }
 
 .imager {
-    width: 230px;
-    height: 250px;
+    width: 70%;
+    height: 300px;
     border-radius: .3rem;
-    border: 1px solid #D0A85D;
     display: block;
     object-fit: cover;
     object-position: 83% 50%;
@@ -91,7 +94,7 @@
 }
 
 .hero-title > h2 {
-        font-size: 50px;
+        font-size: 30px;
         margin: auto;
         text-align: center;
         transform: translate(0px, 130px);
@@ -121,5 +124,5 @@
 @keyframes appear1 {
     0% { opacity: 0 }
     100% { opacity: 1 }
-} 
+}  
 

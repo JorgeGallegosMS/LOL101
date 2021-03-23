@@ -105,6 +105,7 @@ a {
     font-weight: var(--font-semi);
     justify-content: space-between;
     padding-right: 300px;
+
     
 }
 
@@ -142,18 +143,10 @@ a {
     .champi__image {
         position: absolute;
         width: 100%;
-        top: 70%;
+        top: 80%;
         right: -25%;
 }
 
-.champi__title {
-    color: var(--sixth-color);
-    font-size: 72px;
-    /* border-bottom: 1px #DCAB5A solid; */
-    /* padding-bottom: 45px; */
-    text-transform: uppercase;
-   
-}
 
 .champi__text {
     position: absolute;
@@ -179,6 +172,8 @@ a {
     padding-bottom: 45px;
     text-transform: uppercase;
 }
+
+
 
     .name__title {
         color: var(--first-color);
@@ -304,16 +299,24 @@ a {
     .nav__item {
       margin-left: var(--mb-8);
       margin-bottom: 0;
-      font-weight: lighter;
+      /* font-weight: lighter; */
       font-size: 14px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     }
 
     .nav__toggle {
       display: none;
     }
 
-    .nav__link {
+    .item {
+        color: white;
+    }
+
+    .logoNav {
+        color: var(--second-color);
+    }
+
+    .nav__link Link {
       color: var(--third-color);
       transition: 500ms all;
     }
@@ -338,7 +341,7 @@ a {
     .champi__image {
             position: absolute;
             width: 70%;
-            top: 80%;
+            top: 97%;
             right: -10%;
     }
 
@@ -349,7 +352,20 @@ a {
        
     }
 
+    .champrotation__title {
+        color: var(--sixth-color);
+        font-size: 72px;
+        text-transform: uppercase;
+       
+    }
+
     .champi__sub {
+        color: #adafaf;
+        font-size: 17px;
+        padding-top: 30px;
+    }
+
+    .champrotation__sub {
         color: #adafaf;
         font-size: 17px;
         padding-top: 30px;
@@ -364,7 +380,6 @@ a {
     }
 
     .champ__btn {
-        background: var(--seventh-color);
         box-shadow: 10px 10px 0 rgba(0,0,0,.5);
         display: inline-block;
         font-size: 2em;
@@ -372,11 +387,15 @@ a {
         text-decoration:none;
         position: absolute;
         font-size: 26px;
-        color: var(--fourth-color);
+        background: rgba(194, 143, 44, 0.90);
         top: 150%;
         left: 22%;
         transform: translate(-50%, -50%);
         font-size: 26px;
+        color: white;
+        font-weight: var(--font-semi);
+        border: 1px solid white;
+    
       }
       
       .champ__btn:hover {
@@ -393,7 +412,91 @@ a {
         transform: skew(20deg);
       }
 
-  
+      .champro__btn {
+        box-shadow: 10px 10px 0 rgba(0,0,0,.5);
+        display: inline-block;
+        font-size: 2em;
+        padding:.5em 1em;
+        text-decoration:none;
+        position: absolute;
+        font-size: 26px;
+        background: rgba(194, 143, 44, 0.90);
+        top: 263%;
+        right: 20%;
+        transform: translate(-50%, -50%);
+        font-size: 26px;
+        color: white;
+        font-weight: var(--font-semi);
+        border: 1px solid white;
+    
+      }
+      
+      .champro__btn:hover {
+      
+        box-shadow: 0 0 0 ;
+      }
+      
+      .parallelo {
+        transform: skew(-20deg);
+      }
+      
+      .skew {
+        display:inline-block;
+        transform: skew(20deg);
+      }
+
+    .champi__title:after {
+        content: "";
+        height: 1px;
+        background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgb(220, 171, 90) 200%,rgba(0,0,0,0) 100%);
+        display: block;
+        margin-bottom: 20px;
+        margin-top: 40px;
+        margin-left: 130px;
+        margin-right: 140px;
+      
+
+    }
+
+    .champrotation__title:after {
+        content: "";
+        height: 1px;
+        background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgb(220, 171, 90) 200%,rgba(0,0,0,0) 100%);
+        display: block;
+        margin-bottom: 20px;
+        margin-top: 40px;
+        margin-left: 130px;
+        margin-right: 140px;
+      
+
+    }
+
+    .champrotation__text {
+        position: absolute;
+        width: 70%;
+        top: 220%;
+        right: -5%;
+        color: white;
+    }
+
+    
+
+    .champrotation__header {
+        background-image: url("../../static/images/champ-rotation.png");
+        height: 100vh;
+        width: 100%;
+        background-repeat: no-repeat; 
+        background-size: cover;
+    }
+
+    .champrotation__image {
+        position: absolute;
+        width: 65%;
+        top: 200%;
+        left: -10%;
+    }
+
+
 
     .name__title {
         text-transform: uppercase;

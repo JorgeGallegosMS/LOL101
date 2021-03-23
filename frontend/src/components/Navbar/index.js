@@ -8,13 +8,13 @@ export default function Navbar() {
         <header className="l-header">
         <nav className="nav bd-grid">
             <div>
-                <a href="#" className="nav__logo">LOL101</a>
+                <li className="nav__logo"><Link className="logoNav" to="/">LOL101</Link></li>
             </div>
             <div className="nav__menu" id="nav-menu">
                 <ul className="nav__list">
-                    <li className="nav__item"><a href="#home" class="nav__link">Champions</a></li>
-                    <li className="nav__item"><a href="#resume" class="nav__link">Champion Rotation</a></li>
-                    <li className="nav__item"><a href="#contact" class="nav__link">Masteries</a></li>
+                    <li className="nav__item"><Link className="item" to="/champions">Champions</Link></li>
+                    <li className="nav__item"><Link className="item" to="/rotations">Champion Rotations</Link></li>
+                    <li className="nav__item"><Link className="item" to="/">Masteries</Link></li>
                 </ul>
             </div>
             <div className="nav__toggle" id="nav-toggle">
