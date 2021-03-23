@@ -34,7 +34,7 @@ export default function HomeLogo() {
                 <h2 className="champi__sub">Look through our always <span className="hl">up-to-date</span><br></br> 
                 information about champions.</h2>
                 </div>
-                <a href="/rotation" className="champ__btn parallelo"><span className="skew">
+                <a href="/champions" className="champ__btn parallelo"><span className="skew">
                    CHAMPIONS
                    </span>
                 </a>
@@ -52,7 +52,7 @@ export default function HomeLogo() {
                 <h2 className="champrotation__sub">Want to know what champions<br></br> you can take into the <span className="hl">rift </span>
                 next? <br></br> We have you covered.</h2>
                 </div>
-                <a href="#" className="champro__btn parallelo"><span className="skew">
+                <a href="/rotations" className="champro__btn parallelo"><span className="skew">
                    CHAMP ROTATION
                    </span>
                 </a>

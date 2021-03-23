@@ -17,11 +17,12 @@
 .champ-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2rem;
+    grid-gap: 1rem;
     
 }
 
 .champ-namer {
+
     color: #eeecec;
     text-align: center;
     font-size: 16px;
@@ -32,7 +33,10 @@
     transition: all 500ms cubic-bezier(0.550, 0.085, 0.680, 0.530);
     margin-top: -10%;
     text-shadow: 1px 1px 2px rgb(17, 17, 17), 0 0 1em rgb(39, 36, 36), 0 0 0.2em rgb(31, 30, 30);
-   
+    opacity: 1;
+    /* background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); Black see-through */
+    z-index: 100;
     
   
 
@@ -51,7 +55,10 @@
     animation-duration: 5s;
     transition: all 500ms cubic-bezier(0.550, 0.085, 0.680, 0.530);
     padding: 20px 50px 10px 50px;
+
 }
+
+
 
 .imager:hover {
     opacity: 0.80;

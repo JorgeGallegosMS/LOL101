@@ -33,7 +33,7 @@ export default function DisplayRotations() {
                             <div className="cell">
                                 <a href={`/champion/${champ.id}`}>
                                     <img className="imager" src={champ.splashArt}/>
-                                    <div className="overlaybg"></div>
+
                                     <h1 className="champ-namer">{champ.name}</h1>
                                 </a>
                            </div>

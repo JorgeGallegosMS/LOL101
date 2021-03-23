@@ -1,0 +1,120 @@
+.championl {
+    background-color: #fffef6ea;
+    height: 7000px;
+    
+}
+
+
+
+ul {
+    margin-top: 50px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 40px;
+    justify-items: center;  
+    
+    
+
+}
+.champion-name {
+    letter-spacing: 1px;
+    display: block;
+    color: rgba(0, 0, 0, 0.842);
+    padding: 1rem 0;
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+
+.champion-link p {
+    margin: 0;
+    
+}
+
+.champion-image {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    box-shadow: 0px 10px 20px -2px rgb(109, 107, 107);
+    box-shadow: 0 0 0 4px rgba(194, 143, 44, 0.90);
+    transition: box-shadow 0.6s ease-in-out;
+    transition: 1s ease;     
+
+}
+
+
+.champion-image:hover {
+    border: 7px solid rgb(255, 255, 255);
+    box-shadow: 0 0 0 10px #D3BD94;
+    box-sizing: border-box;
+    animation-timing-function: ease-in-out;
+    transition: all 400ms ease;
+    opacity: 0.75;
+}
+
+.rectangle {
+    height: 100px;
+    width: 540px;
+    background-color: #DCAB59;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    animation-name: appear;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    
+
+    
+}
+
+.championmain {
+    margin-top: 40px;
+}
+
+.rectangle > h3 {
+    color: #181f20e1;
+    font-size: 50px;
+    padding-top: 15px;
+    font-weight: normal;
+}
+
+.rectangle > h3 > text {
+    font-weight: bold;
+
+}
+
+
+/* search bar */
+
+.searchbar-container {
+    padding-top: 64px;
+}
+
+.searchinp {
+    width: 30%;
+    padding: 12px 24px;
+    transition: all 250ms ease-in-out;
+    font-size: 18px;
+    line-height: 18px;
+    color: #948568;
+    margin-bottom: 30px;
+ 
+    
+}
+
+.searchinp::placeholder {
+    color: rgba(87, 87, 86, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+
+}
+
+.searchinp:hover, .searchinp:focus {
+    padding: 12px 0px 12px 12px;
+    outline: 0;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #575756;
+    border-radius: 0;
+    transition: all 400ms ease-in-out;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}

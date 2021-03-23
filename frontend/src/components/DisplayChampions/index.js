@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ChampionList from '../ChampionList'
+import '../../static/css/ChampionMain.css'
+import FadeIn from 'react-fade-in';
 const axios = require("axios")
 // 1st Issue, it could randomly error
 // 2nd Issue, need to wait till search STATE is set before activating filter.
@@ -52,6 +54,7 @@ export default function DisplayChampions() {
         if (loadingState === "Loading...") {
             console.log("Still loading")
         } else if (loadingState === "Finished!") {
+
             return <ChampionList champions={allChampions}/>
         } else {
             return
