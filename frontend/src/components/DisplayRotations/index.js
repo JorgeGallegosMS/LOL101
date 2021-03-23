@@ -57,10 +57,6 @@ export default function DisplayRotations() {
                {rotation}
                </div>
                </div>
-           
-        
-
-            
         </Fragment>
     )
 }
