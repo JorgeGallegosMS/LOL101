@@ -1,5 +1,6 @@
 
 #  LOL101
+![alt text](https://cdn.filestackcontent.com/mJv3mAPQVq8hu3B6YKqc)
 
 LOL101 is an account stats/game info website targeted mostly towards beginners. Players can search through over 140+ characters and see information such as abilities, lore, and difficulty. Players can also check the current free champions available to them, and soon will be able to check their account ranked statistics. 
 

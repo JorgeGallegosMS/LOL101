@@ -35,6 +35,7 @@ export default function DisplayChampions() {
         }
         postrequest()
     }, []) 
+
     function updateSearch(e) {
         setLoadingState("")
         let searchTerm = e.target.value.substr(0,20)
@@ -48,6 +49,7 @@ export default function DisplayChampions() {
         const filteredChampions = filter.filter((champion, index) => index < 12)
         setFilteredChampions(filteredChampions) //set filtered champions state
     }
+    
     function displayAfterLoad() {
         if (loadingState === "Loading...") {
             console.log("Still loading")

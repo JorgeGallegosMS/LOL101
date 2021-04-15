@@ -3,7 +3,9 @@ const app = express()
 const { graphqlHTTP } = require('express-graphql')
 const { GraphQLSchema } = require('graphql')
 const RootQueryType = require('./graphqlTypes/root')
+
 const cors = require('cors')
+
 const { port, environment } = require('./vars/appVars')
 const path = require('path')
 
@@ -21,6 +23,7 @@ app.use('/graphql', graphqlHTTP({
 }))
 
 app.use(express.static(path.join(__dirname, 'frontend/build')))
+
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'frontend/build', 'index.html'))
 })

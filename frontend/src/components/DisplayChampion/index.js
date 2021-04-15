@@ -164,7 +164,6 @@ function DisplayChampion() {
                             </div>
                             </div>
                             </div>
-            
                    
                     {/* <Tabs>
                         <TabList>
@@ -188,7 +187,6 @@ function DisplayChampion() {
                         <h2>{lore}</h2>
                         </TabPanel>
                     </Tabs> */}
-                   
                    
     </Fragment>
             )
