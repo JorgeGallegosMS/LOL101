@@ -7,7 +7,7 @@ export default function DisplayRotations() {
     useEffect( () => {
         async function postrequest() {
             const data = await axios({
-                url: 'http://localhost:5000/graphql',
+                url: `/graphql`,
                 method: 'post',
                 data: {
                     query: `
@@ -20,7 +20,10 @@ export default function DisplayRotations() {
                     }
                     `
                 }
-            })
+            }).catch(error => {
+                console.log(error.response.data);
+            });
+            console.log(data)
             const rotations = data.data.data.rotations
             console.log(rotations)
             const champion_JSX = (
@@ -29,8 +32,8 @@ export default function DisplayRotations() {
                         return (
                             <div>
                                 <a href={`/champion/${champ.id}`}>
-                                    <h1 class="champ-namer">{champ.name}</h1>
-                                    <img class="imager" src={champ.splashArt}/>
+                                    <h1 className="champ-namer">{champ.name}</h1>
+                                    <img className="imager" src={champ.splashArt}/>
                                 </a>
                            </div>
                         )
@@ -45,7 +48,7 @@ export default function DisplayRotations() {
     return (
         <Fragment>
             
-            <div class="hero-title">
+            <div className="hero-title">
                <h2>Current Champion Rotation</h2>
            </div>
            <div className="border">

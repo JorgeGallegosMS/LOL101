@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Home from './pages/Home'
 import ChampionRotation from './pages/ChampionRotation'
-import DisplayChampion from './components/DisplayChampion'
 import Champion from './pages/Champion'
+import MyStats from './pages/MyStats'
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
           <Route path="/" exact render={ () => <Home/>}>
           </Route>
           <Route path="/champion/:id1" exact render={ () => <Champion/>}></Route>
+          <Route path="/my-stats" exact render={ () => <MyStats/>}></Route>
         </div>
       </Switch>
     </Router>

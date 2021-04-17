@@ -149,9 +149,9 @@ const mapRecommendedItems = new GraphQLObjectType({
   name: "mapRecommendedItems",
   description: "Array of maps with recommended items",
   fields: () => ({
-    title: {
+    mode: {
       type: GraphQLString,
-      description: "Title of recommended item set",
+      description: "Mode of recommended item set",
     },
     blocks: {
       type: new GraphQLList(itemBlock),
@@ -177,6 +177,7 @@ const itemBlock = new GraphQLObjectType({
     },
   }),
 });
+
 const item = new GraphQLObjectType({
   name: "item",
   description: "Single Item",
@@ -188,7 +189,7 @@ const item = new GraphQLObjectType({
     count: {
       type: GraphQLInt,
       description: "Number of items",
-    },
+    }
   }),
 });
 module.exports = ChampionType;
